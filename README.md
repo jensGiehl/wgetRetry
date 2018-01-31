@@ -4,3 +4,4 @@ A wrapper for wget to retry the download when the HTTP status code is not 200 (O
 Just execute ```wgetRetry.sh``` with the following parameters:
 1. The URL
 1. Filename for the output (optional)
+1. Retry Counter (optional, default is 10)
