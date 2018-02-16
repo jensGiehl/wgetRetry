@@ -14,7 +14,7 @@ responseCode=-1
 currentTry=1
 while [[ ! "${allowedResponseCodes[@]}" =~ "${responseCode}" ]]; do
 	responseCode=`wget --server-response --no-http-keep-alive --output-document=$outputDocument -q "$url" 2>&1 | grep "HTTP/" | cut -d' ' -f4`
-	logger "HTTP response code for $url is $responseCode (Try: $currentTry / $retryCount)"
+	logger "HTTP response code for $url is $responseCode (Try: $currentTry / $retryCount)."
 	if [[ ! "${allowedResponseCodes[@]}" =~ "${responseCode}" ]]; then
 		sleep 4
 		currentTry=$((currentTry+1))
